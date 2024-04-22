@@ -45,7 +45,7 @@ VALIDATE $? "Starting MySQL Server"
 # VALIDATE $? "Setting up root password"
 
 #Below code will be useful for idempotent nature
-mysql -h db.daws78s.online -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
+mysql -h mysql.daws78s.shop -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
